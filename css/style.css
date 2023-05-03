@@ -1,0 +1,824 @@
+@charset "UTF-8";
+
+@import url(reset.css);
+/* font-family: 'Nanum Brush Script', cursive;
+font-family: 'Nanum Gothic', sans-serif; */
+
+/* 레이아웃 */
+#wrap{}
+#header{
+    background: url(https://cdn.pixabay.com/photo/2017/02/08/12/46/moon-2048727_960_720.jpg) center top;
+    height: 325px;
+}
+#contents{}
+#footer{
+    border-top: 1px solid #eee;
+}
+
+/* 컨텐츠 레이아웃 */
+.cont_nav{
+    background-color: #f6fdff;
+}
+#cont_tit{
+    background-color: #eaf7fd;
+}
+#cont_ban{
+    background-color: #dceff7;
+}
+#cont_cont{
+    background-color: #f6fdff;
+}
+
+
+/* 컨테이너 */
+.container{
+    width: 990px;
+    margin: 0 auto;
+
+}
+
+
+/* 헤더 */
+.header{
+}
+.header .header-menu{
+    /* width: 300px; margin-left: auto;
+    메뉴 옆으로 옮기는 방법,밑이랑 같음
+    */
+    text-align: right;
+}
+.header .header-menu a{
+    color: #fff;
+    padding: 10px 0 10px 13px;
+    /*위에 패딩이 안들어가서 인라인블록주기*/
+    display: inline-block;
+}
+
+.header .header-menu a:hover{
+    color: #999;
+}
+
+.header .header-title{
+    text-align: center;
+}
+.header .header-title h1{
+    background-color: #4aa8d4;
+    color: #fff;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    display: inline-block;
+    padding: 5px 20px 6px;
+}
+
+.header .header-title a{
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    padding: 5px 20px 6px;
+    background-color: #2698cb;
+    margin-top: -5px;
+}
+
+.header .header-icon{
+    text-align: center;
+    margin-top: 30px;
+}
+.header .header-icon a{
+    display: inline-block; /*인라인요소는 넓이 높이 값 못 주기 때문에*/
+    width: 60px;height: 60px;
+    background-image: url(../img/icon.png);
+    margin: 0 3px;
+}
+
+
+/*.header-icon a에 width: 60px;height: 60px; 줬으니까 60씩*/
+/*background-position: x y;*/
+.header .header-icon a.icon1{
+    background-position: 0 0;
+}
+.header .header-icon a.icon2{
+    background-position: 0 -60px;
+}
+
+.header .header-icon a.icon3{
+    background-position: 0 -120px;
+}
+.header .header-icon a.icon4{
+    background-position: 0 -180px;
+}
+
+
+
+.header .header-icon a.icon1:hover{
+    background-position: -60px 0;
+}
+.header .header-icon a.icon2:hover{
+    background-position: -60px -60px;
+}
+
+.header .header-icon a.icon3:hover{
+    background-position: -60px -120px;
+}
+.header .header-icon a.icon4:hover{
+    background-position: -60px -180px;
+}
+
+
+/* nav */
+.nav{ /*큰 공간에 영역줄때는 패딩 쓰기*/
+    display: none;
+    padding: 30px 0;
+}
+.nav>div{
+    float: left;
+    width: 40%;
+}
+.nav>div.last{
+    width: 20%; /*형들은 40%씩이니까 남는 20%*/
+}
+.nav>div h3{
+    font-size: 18px;
+    color: #25a2d0;
+    margin-bottom: 4px;
+}
+.nav>div ol{
+    overflow: hidden;
+}
+.nav>div ol li{
+    position: relative;
+    float: left;
+    width: 50%;
+    margin-bottom: 3px;
+}
+
+.nav>div.last ol li{
+    width: 100%;
+}
+
+.nav>div ol li:after{
+    content: "";
+    position: absolute;
+    left: 0;bottom: 0;
+    width: 0;
+    /* transform: scaleX(0); */
+    height: 2px;
+    background-color: #25a2d0;
+    transition: 0.2s;
+}
+
+.nav>div ol li:hover:after{
+    width: 100%;
+}
+
+.tit{
+    position: relative;
+}
+.tit h2{
+    font-size: 40px;
+    font-family: 'Nanum Brush Script' , cursive;
+    color: #2c94c4;
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 2px;  /*글자 간격(자간)*/
+}
+.tit .btn{
+    position: absolute;
+    right: 0;top: 5px;
+    width: 60px;height: 60px;
+    background:url(../img/icon.png) 0 -600px;    
+}
+.tit .btn.on{
+    background-position: 0 -660px;   
+}
+
+
+
+/* banner------------------------- */
+.ban{
+    padding: 24px 0 40px;
+}
+.ban img{
+    border: 4px solid #dcdcdc;
+}
+.ban img:hover{
+    border: 4px solid #98dcdc;
+}
+
+.ban .slick-prev{
+    /* slick-prev은 개발자모드 눌러서 찾음 
+    previous 누르면 class에 있음*/
+    position: absolute;
+    left: -80px;top: 70px;
+    width: 43px;height: 43px;
+    background: url(../img/icon.png) -150px 0;
+    text-indent: -9999px;
+}
+
+.ban .slick-prev:hover{
+    background-position: -193px 0;
+}
+
+.ban .slick-next{
+    position: absolute;
+    right: -80px;top: 70px;
+    width: 43px;height: 43px;
+    background: url(../img/icon.png) -150px -43px;
+    text-indent: -9999px;
+}
+
+.ban .slick-next:hover{
+    background-position: -193px -43px;
+}
+
+.ban .slick-list{
+    left: 25px;
+    margin-top: 10px;
+}
+
+.ban .slick-dots{
+    text-align: center;
+}
+.ban .slick-dots li{
+    display: inline-block;
+    margin: 5px;
+}
+.ban .slick-dots li button{
+    font-size: 0;
+    width: 15px;height: 15px;
+    background: #5bdfeb;
+    border-radius: 20px;
+    cursor: pointer;
+    transform: scaleX(1);
+    transition: 0.3s;
+}
+
+.ban .slick-dots li.slick-active button{
+    background-color: #2b91c8;
+    transform: scaleX(1.3);
+    transform-origin: left top;
+    border-radius: 7px;
+}
+
+
+/* cont_cont------------------------------ */
+.cont{padding-top: 30px;}
+.cont .column{
+    border-right: 1px solid #c8c8c8;
+    width: 289px;height: 363px;
+    float: left;
+    padding-right: 30px;
+    margin: 0 30px 30px 0;
+    position: relative;
+}
+.cont .col1{}
+.cont .col2{}
+.cont .col3{
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+}
+.cont .col4{}
+.cont .col5{}
+.cont .col6{
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.cont .column h3{}
+.cont .column h3 .ico_img{
+    background: url(../img/icon.png) ;
+    width: 60px;height: 60px;
+    left: 0; top: 0;
+}
+.cont .col1 h3 .ico_img{
+    background-position: 0 -240px;
+}
+.cont .col2 h3 .ico_img{
+    background-position: 0 -300px;
+}
+.cont .col3 h3 .ico_img{
+    background-position: 0 -360px;
+}
+.cont .col4 h3 .ico_img{
+    background-position: 0 -420px;
+}
+.cont .col5 h3 .ico_img{
+    background-position: 0 -480px;
+}
+.cont .col6 h3 .ico_img{
+    background-position: 0 -540px;
+}
+.cont .col1 h3 .ico_img:hover{
+    background-position: -60px -240px;
+}
+.cont .col2 h3 .ico_img:hover{
+    background-position: -60px -300px;
+}
+.cont .col3 h3 .ico_img:hover{
+    background-position: -60px -360px;
+}
+.cont .col4 h3 .ico_img:hover{
+    background-position: -60px -420px;
+}
+.cont .col5 h3 .ico_img:hover{
+    background-position: -60px -480px;
+}
+.cont .col6 h3 .ico_img:hover{
+    background-position: -60px -540px;
+}
+
+
+.cont .column h3 .ico_tit{
+    font-size: 16px;
+    color: #2c94c4;
+    padding-left: 70px;
+}
+.cont .column .ico_desc{
+    border-bottom: 1px solid #c8c8c8;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-left: 70px;
+}
+
+/* 게시판------------------------------- */
+.notice{
+    position: relative;
+}
+.notice h4{
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.notice ul{}
+.notice ul li{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /*위의 세가지는 말줄임말 세트*/
+    background: url(../img/dot.gif) no-repeat 0 8px;
+    padding-left: 8px;
+    /*패딩이 글자에만 먹히고 bg이미지는 안먹히는 이유
+    --> 글자는 공간에 속하고(자식) bg이미지는 속하지않음*/
+}
+.notice ul li a{
+    font-size: 12px;
+}
+.notice .more{
+    width: 17px;height: 17px;
+    background: url(../img/icon.png) -150px -90px;
+    right: 0;top: 0;
+    /*너무 위에 있으니 notice가 기준이 되서 옆에 있게 
+    notice에 position: relative 주기*/
+}
+
+
+/* 게시판유형2--------------------------- */
+.notice2{
+    margin-top: 15px;
+    position: relative;
+}
+.notice2 h4{
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.notice2 ul{}
+.notice2 ul li{
+    overflow: hidden; /*포지션 때문에 깨지는거 부모한테 overflow: hidden 주면 안깨짐*/
+    background: url(../img/dot.gif) no-repeat 0 8px;
+    padding-left: 8px;
+}
+.notice2 ul li a{
+    float: left;
+    width: 65%;
+    /*a는 인라인요소라 원래 w안되지만 float 해줘서 가능*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice2 ul li span{
+    float: right;
+    width: 30%;
+}
+.notice2 .more{
+    right: 0;top: 0;
+    background: url(../img/icon.png) -150px -90px;
+    width: 17px;height: 17px;
+    /*너무 위에 있으니 notice2가 기준이 되서 옆에 있게 
+    notice2에 position: relative 주기*/
+}
+
+/* 게시판유형3------------------------ */
+.notice3{
+    position: relative;
+}
+.notice3 h4{
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.notice3 ul{}
+.notice3 ul li{
+    position: relative;
+    padding: 8px 0 16px 60px; /*60px은 50px(이미지 크기)+10px*/
+}
+.notice3 ul li a{}
+.notice3 ul li a img{
+    width: 50px;
+    position: absolute;
+    left: 0;top: 0;
+}
+.notice3 ul li a strong{}
+.notice3 ul li a span{
+    display: block;
+    /*말줄임말은 블록요소 아니면 적용안됨*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice3 .more{
+    width: 17px;height: 17px;
+    right: 0;top: 0;
+    background: url(../img/icon.png) -150px -90px;
+    /*너무 위에 있으니 notice3이 기준이 되서 옆에 있게 
+    notice3에 position: relative 주기*/
+}
+
+/* notice_hover------------------------ */
+.notice_hover{}
+.notice_hover h4{
+    color: #0093bd;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+.notice_hover ul{
+    /* li에 float: left 깨지지않게 여기에 overflow: hidden 해주거나 html가서 ul에 clearfix해주거나*/
+}
+.notice_hover ul li{
+    float: left;
+    width: 93px;
+    margin-right: 5px;
+}
+.notice_hover ul li:last-child{
+    margin-right: 0;
+}
+.notice_hover ul li a{}
+.notice_hover ul li a span{
+    position: relative;
+    display: block;
+}
+.notice_hover ul li a span img{
+    width: 100%;
+    display: block;
+}
+.notice_hover ul li a span em{
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;height: 100%;
+    line-height: 98px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    text-align: center;/*원래 인라인요소에는 못쓰지만
+    앱솔 줬기때문에 가능*/
+    visibility: hidden; 
+    /*영역을 안보이게 하는 방법
+    1.display:none  //실제영역이 없어짐, 애니(o)
+    2.opacity:0  //영역은 있으나 안보임,애니(o)
+    3.visibiluty:hidden  //영역은 있으나 안보임,애니(x)*/
+}
+.notice_hover ul li a span:hover em{
+    visibility: visible;
+}
+.notice_hover ul li a strong{
+    font-size: 12px;
+    padding-top: 3px;
+    display: block;
+}
+
+
+/* notice_hover2------------------------ */
+.notice_hover2{margin-top: 15px;}
+.notice_hover2 ul{}
+.notice_hover2 ul li{
+    float: left;
+    width: 93px;
+    margin-right: 5px;
+    height: 93px;
+}
+.notice_hover2 ul li:last-child{
+    margin-right: 0;
+}
+.notice_hover2 ul li a{}
+.notice_hover2 ul li a span{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 93px;
+}
+.notice_hover2 ul li a span img{
+    width: 100%;
+    display: block;
+}
+.notice_hover2 ul li a span em{
+    position: absolute;
+    left: 0;bottom: -25px;
+    width: 100%;
+    padding: 2px 0;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    text-align: center;
+    transition: 0.3s;
+}
+.notice_hover2 ul li a span:hover em{
+    bottom: 0;
+}
+.notice_hover2 ul li a strong{
+    font-size: 12px;
+    padding-top: 3px;
+    display: block;
+}
+
+
+/* 탭메뉴------------------------ */
+.tab_menu{
+    position: relative;
+    height: 108px;
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+.tab_menu h4{}
+.tab_menu ul{
+    border-bottom: 1px solid #ccc;
+}
+.tab_menu ul li{
+    float: left;
+    border: 1px solid #ccc;/*패딩때문에 선이 끝까지 안감*/
+    margin-right: -1px;/*보더 겹쳐서 두꺼워진거 정리*/
+    margin-bottom: -1px;/*ul보더 겹쳐서 두꺼워진거 정리*/
+}
+.tab_menu ul li a{
+    display: block;
+    padding: 5px 10px;
+}
+.tab_menu ul li ul{
+    position: absolute;
+    left: 10px;top: 48px;
+    width: 270px;
+    border-bottom: none;
+}
+.tab_menu ul li ul li{
+    float: none;
+    border: none;
+    background: url(../img/dot.gif) no-repeat 0 8px;
+    padding-left: 8px;
+}
+.tab_menu ul li ul li a{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 0 3px 0;
+}
+
+.tab_menu ul li.active{
+    background-color: #2c94c4;
+}
+
+.tab_menu ul li.active a{
+    color: #fff;
+}
+
+.tab_menu ul li.active ul li a{
+    color: #222;
+}
+
+/* notice4---------------------------------- */
+.notice4{
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    position: relative;
+}
+.notice4 h4{
+    border-bottom: 1px solid #ccc;
+    padding: 8px 10px;
+    color: #0090bd;
+}
+.notice4 h4 em{
+    color: #cf3292;
+}
+
+.notice4 ul{
+    padding: 10px;
+}
+.notice4 ul li{
+    overflow: hidden; /*clearfix대신*/
+}
+.notice4 ul li a{
+    float: left;
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice4 ul li span{
+    float: right;
+    width: 30%;
+}
+
+.notice4 .more{
+    position: absolute;
+    right: 9px;top: 9px;
+}
+
+/* gallery---------------------- */
+.gallery{
+    border: 1px solid #ccc;
+    position: relative;
+}
+.gallery h4{
+    font-size: 14px;
+    color: #0090bd;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0 8px 11px;
+    font-weight: bold;
+}
+.gallery img{
+    width: 100%;
+}
+.gallery .gallery_btn{
+    position: absolute;
+    right: 8px;top: 8px;
+
+}
+.gallery .gallery_btn button{
+    width: 23px;height: 23px;
+    background: url(../img/icon.png) ;
+}
+.gallery .gallery_btn button.gb_icon1{
+    background-position: -150px -120px;
+}
+.gallery .gallery_btn button.gb_icon2{
+    background-position: -150px -143px;
+}
+.gallery .gallery_btn button.gb_icon3{
+    background-position: -150px -166px;
+}
+.gallery .gallery_btn button.gb_icon4{
+    background-position: -150px -189px;
+
+}
+
+.gallery .gallery_btn button.gb_icon1:hover{
+    background-position: -173px -120px;
+}
+.gallery .gallery_btn button.gb_icon2:hover{
+    background-position: -173px -143px;
+}
+.gallery .gallery_btn button.gb_icon3:hover{
+    background-position: -173px -166px;
+}
+.gallery .gallery_btn button.gb_icon4:hover{
+    background-position: -173px -189px;
+
+}
+
+/* 로그인 */
+.login-wrap{
+    background-color: #f2f4f5;
+    padding: 15px;
+}
+.login_header{
+    font-size: 12px;
+    padding: 3px 0;}
+
+.login-wrap .lh_check{
+    float: left;  /*부모 태그에 clearfix주기*/
+    padding-right: 15px;
+}
+.login-wrap .lh_check .info_check{
+    /*인라인요소끼리 라인 맞출 때*/
+    vertical-align: -2px;
+}
+
+.login-wrap .lh_ip{
+    float: left;
+    /*형제끼리는 플룻 같이 줘야함*/
+}
+.login-wrap .lh_ip em{
+}
+
+.login_content{
+    position: relative;
+}
+.login_content .input_text{
+    width: 182px;
+    height: 16px;
+    border: 1px solid #bebebe;
+    background-color: #fff;
+    outline: none;
+    margin-bottom: 3px;
+    padding: 2px 5px;
+}
+
+.login_content .lc_btn{
+    position: absolute;
+    right: 0;top: 0;
+    width: 62px;height: 47px;
+    background-color: #fff;
+    border: 1px solid #bebebe;
+}
+
+.login_footer{
+    margin-top: 5px;
+}
+.login_footer ul{}
+.login_footer ul li{
+    display: inline;
+    /*공간을 확실하게 맞출 필요없을 때*/
+}
+.login_footer ul li a{}
+.login_footer ul li a strong{}
+
+
+/* footer */
+.footer{
+    text-align: center;
+    /*전체적으로 가운데 정렬*/
+    padding: 25px 0;
+}
+.footer ul{
+    margin-bottom: 20px;
+}
+.footer ul li{
+    position: relative;
+    display: inline;
+    /*딱 맞출 필요없어서 플로우 레프트안하고 디스플레이 인라인*/
+    padding: 0 7px 0 10px;
+}
+.footer ul li::before{
+    /* footer 텍스트 사이 | 만들기*/
+    content: "";
+    width: 1px;height: 12px;
+    background-color: #ccc;
+    position: absolute;
+    left: 0;top: 2px;
+}
+/*before는 li당 하나뿐이라서 li에 first-child*/
+.footer ul li:first-child:before{
+    width: 0;height: 0;
+}
+.footer ul li a{}
+.footer address{}
+
+
+
+/* 팝업 */
+.popup{
+    margin-top: 15px;
+}
+.popup h4{
+    font-size: 14px;
+    color: #0093bd;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+.popup ul{}
+.popup ul li{
+    float: left;
+    width: 93px;
+    margin-right: 5px;
+}
+.popup ul li:last-child{
+    margin-right: 0;
+}
+.popup ul li a{}
+.popup ul li a img{
+    width: 100%;
+}
+
+/* layer popup */
+/*공지사항 같은 레이어들은 fixed사용*/
+#layer{
+    display: none;
+    position: fixed;
+    left: 50px;top: 50px;
+    width: 700px;
+    border: 10px solid #dceff7;
+}
+#layer img{
+    width: 100%;
+    display: block;
+}
+#layer .close{
+    position: absolute;
+    top: 10px;
+    background-color: #0093bd;
+    padding: 2px 6px;
+    color: #fff;
+}
+
